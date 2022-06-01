@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HttpServer {
+public class JettyHttpServer {
   public static final String WEBAPP_RESOURCES_LOCATION = "webapp";
 
   public static void main(String[] args) throws Exception {
@@ -58,7 +58,7 @@ public class HttpServer {
             + "web resource dir:" + e.getMessage());
       }
     } else {
-      resourceUrl = HttpServer.class.getClassLoader().getResource("webapp/" + appName);
+      resourceUrl = JettyHttpServer.class.getClassLoader().getResource("webapp/" + appName);
 
       if (resourceUrl == null) {
         throw new FileNotFoundException("webapp/" + appName +
