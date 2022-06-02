@@ -5,7 +5,7 @@ import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
 
-public class UndertowHttpServer {
+public class UndertowServer {
   public static final String WEBAPP_RESOURCES_LOCATION = "webapp";
 
   public static void main(final String[] args) {

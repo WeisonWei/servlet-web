@@ -1,4 +1,4 @@
-package server;
+package servlet;
 
 
 import javax.servlet.ServletContext;
@@ -9,13 +9,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
-public class SqlServlet extends HttpServlet {
+public class HelloServlet extends HttpServlet {
 
   /**
    * for java.io.Serializable
    */
   private static final long serialVersionUID = 1L;
-  public SqlServlet() {
+  public HelloServlet() {
   }
 
   /**

@@ -4,6 +4,7 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
+import servlet.SqlServlet;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +13,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JettyHttpServer {
+public class JettyServer {
   public static final String WEBAPP_RESOURCES_LOCATION = "webapp";
 
   public static void main(String[] args) throws Exception {
@@ -58,7 +59,7 @@ public class JettyHttpServer {
             + "web resource dir:" + e.getMessage());
       }
     } else {
-      resourceUrl = JettyHttpServer.class.getClassLoader().getResource("webapp/" + appName);
+      resourceUrl = JettyServer.class.getClassLoader().getResource("webapp/" + appName);
 
       if (resourceUrl == null) {
         throw new FileNotFoundException("webapp/" + appName +

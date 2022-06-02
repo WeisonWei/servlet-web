@@ -6,12 +6,14 @@ import io.undertow.server.handlers.PathHandler;
 import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
+import servlet.HelloServlet;
+import servlet.SqlServlet;
 
 import javax.servlet.ServletException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class UndertowServlet1 {
+public class UndertowServer2 {
   public static final String WEBAPP_RESOURCES_LOCATION = "webapp";
 
   /**
@@ -21,7 +23,7 @@ public class UndertowServlet1 {
    */
   public static void main(final String[] args) throws ServletException, UnknownHostException {
     DeploymentInfo servletBuilder = Servlets.deployment()
-        .setClassLoader(UndertowServlet1.class.getClassLoader())
+        .setClassLoader(UndertowServer2.class.getClassLoader())
         .setContextPath("/myapp")
         .setDeploymentName("test.war")
         .addServlets(

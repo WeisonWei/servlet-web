@@ -9,10 +9,12 @@ import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
 import io.undertow.servlet.api.ServletContainer;
 import io.undertow.servlet.api.ServletInfo;
+import servlet.HelloServlet;
+import servlet.SqlServlet;
 
 import javax.servlet.ServletException;
 
-public class UndertowServlet {
+public class UndertowServer1 {
   public static final String WEBAPP_RESOURCES_LOCATION = "webapp";
 
   public static void main(final String[] args) throws ServletException {
@@ -32,7 +34,7 @@ public class UndertowServlet {
     // 创建DeploymentInfo应用布署
     DeploymentInfo deployment = Servlets.deployment();
     // 指定ClassLoader
-    deployment.setClassLoader(UndertowServlet.class.getClassLoader());
+    deployment.setClassLoader(UndertowServer1.class.getClassLoader());
     // 应用上下文(必须与映射路径一致，否则sessionID会有问题，每次都新建)
     deployment.setContextPath("/myapp");
     // 设置布署包名
